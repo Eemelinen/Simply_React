@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Conditional rendering</title>
+  </head>
+  <body>
+    <!-- Root container for react components -->
+    <div id='root'></div>
+ 
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+    <script type="text/babel">
+      
+        const HelloWorld = props => {
+
+            return props.text.length <= 5 ? <p>{props.text}</p> : <p>Sorry. The text is too long.</p>
+
+            // if(props.text.length <= 5) {
+            //     return <p>{props.text}</p>
+            // } else {
+            //     return <p>Sorry. The text is too long.</p>
+            // }
+        }
+
+        ReactDOM.render(<HelloWorld text="Hello world!"/>, document.getElementById('root'));
+
+    </script>
+  </body>
+</html>
